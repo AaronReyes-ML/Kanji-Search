@@ -1,0 +1,1906 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+</head>
+<style>
+    .square-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .square-grid__cell {
+        background-color: transparent;
+        box-shadow: 0 0 0 1px black;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .square-grid__content {
+        left: 1px;
+        position: absolute;
+        top: 0;
+    }
+
+    .square-grid__cell:after {
+        content: '';
+        display: block;
+        padding-bottom: 100%;
+    }
+
+    .square-grid__cell--16 {
+         flex-basis: 6.25%;
+     }
+
+    .button{
+        background-color: transparent;
+        position: relative;
+        z-index: 999;
+        font-size: 50px;
+        border: none;
+        color: white;
+        text-align: center;
+        display: inline-flex;
+    }
+
+    .image{
+        position: absolute;
+        background-position: bottom;
+        top: 0px;
+    }
+
+    .bgImage{
+        position: absolute;
+        justify-content: center;
+    }
+
+</style>
+<body>
+<table style="width: 50%">
+    <table style="width: 100%">
+        <tr>
+            <td width="50%">
+                <div class='square-grid'>
+                    <img class="bgImage" id = "traceImage" src=""/>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "0,0">________</button>
+                            <img class = 'image' src="unset.png" id = "0,0p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "0,1">________</button>
+                            <img class = 'image' src="unset.png" id = "0,1p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "0,2">________</button>
+                            <img class = 'image' src="unset.png" id = "0,2p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "0,3">________</button>
+                            <img class = 'image' src="unset.png" id = "0,3p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "0,4">________</button>
+                            <img class = 'image' src="unset.png" id = "0,4p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "0,5">________</button>
+                            <img class = 'image' src="unset.png" id = "0,5p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "0,6">________</button>
+                            <img class = 'image' src="unset.png" id = "0,6p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "0,7">________</button>
+                            <img class = 'image' src="unset.png" id = "0,7p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "0,8">________</button>
+                            <img class = 'image' src="unset.png" id = "0,8p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "0,9">________</button>
+                            <img class = 'image' src="unset.png" id = "0,9p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "0,10">________</button>
+                            <img class = 'image' src="unset.png" id = "0,10p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "0,11">________</button>
+                            <img class = 'image' src="unset.png" id = "0,11p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "0,12">________</button>
+                            <img class = 'image' src="unset.png" id = "0,12p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "0,13">________</button>
+                            <img class = 'image' src="unset.png" id = "0,13p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "0,14">________</button>
+                            <img class = 'image' src="unset.png" id = "0,14p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "0,15">________</button>
+                            <img class = 'image' src="unset.png" id = "0,15p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "1,0">________</button>
+                            <img class = 'image' src="unset.png" id = "1,0p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "1,1">________</button>
+                            <img class = 'image' src="unset.png" id = "1,1p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "1,2">________</button>
+                            <img class = 'image' src="unset.png" id = "1,2p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "1,3">________</button>
+                            <img class = 'image' src="unset.png" id = "1,3p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "1,4">________</button>
+                            <img class = 'image' src="unset.png" id = "1,4p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "1,5">________</button>
+                            <img class = 'image' src="unset.png" id = "1,5p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "1,6">________</button>
+                            <img class = 'image' src="unset.png" id = "1,6p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "1,7">________</button>
+                            <img class = 'image' src="unset.png" id = "1,7p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "1,8">________</button>
+                            <img class = 'image' src="unset.png" id = "1,8p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "1,9">________</button>
+                            <img class = 'image' src="unset.png" id = "1,9p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "1,10">________</button>
+                            <img class = 'image' src="unset.png" id = "1,10p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "1,11">________</button>
+                            <img class = 'image' src="unset.png" id = "1,11p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "1,12">________</button>
+                            <img class = 'image' src="unset.png" id = "1,12p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "1,13">________</button>
+                            <img class = 'image' src="unset.png" id = "1,13p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "1,14">________</button>
+                            <img class = 'image' src="unset.png" id = "1,14p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "1,15">________</button>
+                            <img class = 'image' src="unset.png" id = "1,15p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "2,0">________</button>
+                            <img class = 'image' src="unset.png" id = "2,0p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "2,1">________</button>
+                            <img class = 'image' src="unset.png" id = "2,1p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "2,2">________</button>
+                            <img class = 'image' src="unset.png" id = "2,2p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "2,3">________</button>
+                            <img class = 'image' src="unset.png" id = "2,3p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "2,4">________</button>
+                            <img class = 'image' src="unset.png" id = "2,4p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "2,5">________</button>
+                            <img class = 'image' src="unset.png" id = "2,5p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "2,6">________</button>
+                            <img class = 'image' src="unset.png" id = "2,6p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "2,7">________</button>
+                            <img class = 'image' src="unset.png" id = "2,7p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "2,8">________</button>
+                            <img class = 'image' src="unset.png" id = "2,8p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "2,9">________</button>
+                            <img class = 'image' src="unset.png" id = "2,9p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "2,10">________</button>
+                            <img class = 'image' src="unset.png" id = "2,10p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "2,11">________</button>
+                            <img class = 'image' src="unset.png" id = "2,11p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "2,12">________</button>
+                            <img class = 'image' src="unset.png" id = "2,12p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "2,13">________</button>
+                            <img class = 'image' src="unset.png" id = "2,13p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "2,14">________</button>
+                            <img class = 'image' src="unset.png" id = "2,14p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "2,15">________</button>
+                            <img class = 'image' src="unset.png" id = "2,15p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "3,0">________</button>
+                            <img class = 'image' src="unset.png" id = "3,0p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "3,1">________</button>
+                            <img class = 'image' src="unset.png" id = "3,1p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "3,2">________</button>
+                            <img class = 'image' src="unset.png" id = "3,2p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "3,3">________</button>
+                            <img class = 'image' src="unset.png" id = "3,3p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "3,4">________</button>
+                            <img class = 'image' src="unset.png" id = "3,4p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "3,5">________</button>
+                            <img class = 'image' src="unset.png" id = "3,5p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "3,6">________</button>
+                            <img class = 'image' src="unset.png" id = "3,6p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "3,7">________</button>
+                            <img class = 'image' src="unset.png" id = "3,7p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "3,8">________</button>
+                            <img class = 'image' src="unset.png" id = "3,8p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "3,9">________</button>
+                            <img class = 'image' src="unset.png" id = "3,9p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "3,10">________</button>
+                            <img class = 'image' src="unset.png" id = "3,10p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "3,11">________</button>
+                            <img class = 'image' src="unset.png" id = "3,11p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "3,12">________</button>
+                            <img class = 'image' src="unset.png" id = "3,12p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "3,13">________</button>
+                            <img class = 'image' src="unset.png" id = "3,13p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "3,14">________</button>
+                            <img class = 'image' src="unset.png" id = "3,14p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "3,15">________</button>
+                            <img class = 'image' src="unset.png" id = "3,15p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "4,0">________</button>
+                            <img class = 'image' src="unset.png" id = "4,0p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "4,1">________</button>
+                            <img class = 'image' src="unset.png" id = "4,1p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "4,2">________</button>
+                            <img class = 'image' src="unset.png" id = "4,2p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "4,3">________</button>
+                            <img class = 'image' src="unset.png" id = "4,3p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "4,4">________</button>
+                            <img class = 'image' src="unset.png" id = "4,4p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "4,5">________</button>
+                            <img class = 'image' src="unset.png" id = "4,5p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "4,6">________</button>
+                            <img class = 'image' src="unset.png" id = "4,6p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "4,7">________</button>
+                            <img class = 'image' src="unset.png" id = "4,7p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "4,8">________</button>
+                            <img class = 'image' src="unset.png" id = "4,8p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "4,9">________</button>
+                            <img class = 'image' src="unset.png" id = "4,9p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "4,10">________</button>
+                            <img class = 'image' src="unset.png" id = "4,10p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "4,11">________</button>
+                            <img class = 'image' src="unset.png" id = "4,11p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "4,12">________</button>
+                            <img class = 'image' src="unset.png" id = "4,12p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "4,13">________</button>
+                            <img class = 'image' src="unset.png" id = "4,13p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "4,14">________</button>
+                            <img class = 'image' src="unset.png" id = "4,14p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "4,15">________</button>
+                            <img class = 'image' src="unset.png" id = "4,15p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "5,0">________</button>
+                            <img class = 'image' src="unset.png" id = "5,0p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "5,1">________</button>
+                            <img class = 'image' src="unset.png" id = "5,1p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "5,2">________</button>
+                            <img class = 'image' src="unset.png" id = "5,2p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "5,3">________</button>
+                            <img class = 'image' src="unset.png" id = "5,3p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "5,4">________</button>
+                            <img class = 'image' src="unset.png" id = "5,4p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "5,5">________</button>
+                            <img class = 'image' src="unset.png" id = "5,5p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "5,6">________</button>
+                            <img class = 'image' src="unset.png" id = "5,6p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "5,7">________</button>
+                            <img class = 'image' src="unset.png" id = "5,7p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "5,8">________</button>
+                            <img class = 'image' src="unset.png" id = "5,8p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "5,9">________</button>
+                            <img class = 'image' src="unset.png" id = "5,9p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "5,10">________</button>
+                            <img class = 'image' src="unset.png" id = "5,10p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "5,11">________</button>
+                            <img class = 'image' src="unset.png" id = "5,11p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "5,12">________</button>
+                            <img class = 'image' src="unset.png" id = "5,12p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "5,13">________</button>
+                            <img class = 'image' src="unset.png" id = "5,13p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "5,14">________</button>
+                            <img class = 'image' src="unset.png" id = "5,14p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "5,15">________</button>
+                            <img class = 'image' src="unset.png" id = "5,15p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "6,0">________</button>
+                            <img class = 'image' src="unset.png" id = "6,0p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "6,1">________</button>
+                            <img class = 'image' src="unset.png" id = "6,1p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "6,2">________</button>
+                            <img class = 'image' src="unset.png" id = "6,2p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "6,3">________</button>
+                            <img class = 'image' src="unset.png" id = "6,3p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "6,4">________</button>
+                            <img class = 'image' src="unset.png" id = "6,4p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "6,5">________</button>
+                            <img class = 'image' src="unset.png" id = "6,5p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "6,6">________</button>
+                            <img class = 'image' src="unset.png" id = "6,6p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "6,7">________</button>
+                            <img class = 'image' src="unset.png" id = "6,7p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "6,8">________</button>
+                            <img class = 'image' src="unset.png" id = "6,8p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "6,9">________</button>
+                            <img class = 'image' src="unset.png" id = "6,9p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "6,10">________</button>
+                            <img class = 'image' src="unset.png" id = "6,10p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "6,11">________</button>
+                            <img class = 'image' src="unset.png" id = "6,11p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "6,12">________</button>
+                            <img class = 'image' src="unset.png" id = "6,12p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "6,13">________</button>
+                            <img class = 'image' src="unset.png" id = "6,13p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "6,14">________</button>
+                            <img class = 'image' src="unset.png" id = "6,14p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "6,15">________</button>
+                            <img class = 'image' src="unset.png" id = "6,15p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "7,0">________</button>
+                            <img class = 'image' src="unset.png" id = "7,0p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "7,1">________</button>
+                            <img class = 'image' src="unset.png" id = "7,1p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "7,2">________</button>
+                            <img class = 'image' src="unset.png" id = "7,2p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "7,3">________</button>
+                            <img class = 'image' src="unset.png" id = "7,3p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "7,4">________</button>
+                            <img class = 'image' src="unset.png" id = "7,4p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "7,5">________</button>
+                            <img class = 'image' src="unset.png" id = "7,5p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "7,6">________</button>
+                            <img class = 'image' src="unset.png" id = "7,6p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "7,7">________</button>
+                            <img class = 'image' src="unset.png" id = "7,7p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "7,8">________</button>
+                            <img class = 'image' src="unset.png" id = "7,8p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "7,9">________</button>
+                            <img class = 'image' src="unset.png" id = "7,9p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "7,10">________</button>
+                            <img class = 'image' src="unset.png" id = "7,10p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "7,11">________</button>
+                            <img class = 'image' src="unset.png" id = "7,11p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "7,12">________</button>
+                            <img class = 'image' src="unset.png" id = "7,12p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "7,13">________</button>
+                            <img class = 'image' src="unset.png" id = "7,13p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "7,14">________</button>
+                            <img class = 'image' src="unset.png" id = "7,14p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "7,15">________</button>
+                            <img class = 'image' src="unset.png" id = "7,15p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "8,0">________</button>
+                            <img class = 'image' src="unset.png" id = "8,0p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "8,1">________</button>
+                            <img class = 'image' src="unset.png" id = "8,1p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "8,2">________</button>
+                            <img class = 'image' src="unset.png" id = "8,2p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "8,3">________</button>
+                            <img class = 'image' src="unset.png" id = "8,3p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "8,4">________</button>
+                            <img class = 'image' src="unset.png" id = "8,4p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "8,5">________</button>
+                            <img class = 'image' src="unset.png" id = "8,5p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "8,6">________</button>
+                            <img class = 'image' src="unset.png" id = "8,6p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "8,7">________</button>
+                            <img class = 'image' src="unset.png" id = "8,7p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "8,8">________</button>
+                            <img class = 'image' src="unset.png" id = "8,8p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "8,9">________</button>
+                            <img class = 'image' src="unset.png" id = "8,9p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "8,10">________</button>
+                            <img class = 'image' src="unset.png" id = "8,10p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "8,11">________</button>
+                            <img class = 'image' src="unset.png" id = "8,11p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "8,12">________</button>
+                            <img class = 'image' src="unset.png" id = "8,12p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "8,13">________</button>
+                            <img class = 'image' src="unset.png" id = "8,13p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "8,14">________</button>
+                            <img class = 'image' src="unset.png" id = "8,14p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "8,15">________</button>
+                            <img class = 'image' src="unset.png" id = "8,15p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "9,0">________</button>
+                            <img class = 'image' src="unset.png" id = "9,0p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "9,1">________</button>
+                            <img class = 'image' src="unset.png" id = "9,1p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "9,2">________</button>
+                            <img class = 'image' src="unset.png" id = "9,2p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "9,3">________</button>
+                            <img class = 'image' src="unset.png" id = "9,3p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "9,4">________</button>
+                            <img class = 'image' src="unset.png" id = "9,4p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "9,5">________</button>
+                            <img class = 'image' src="unset.png" id = "9,5p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "9,6">________</button>
+                            <img class = 'image' src="unset.png" id = "9,6p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "9,7">________</button>
+                            <img class = 'image' src="unset.png" id = "9,7p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "9,8">________</button>
+                            <img class = 'image' src="unset.png" id = "9,8p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "9,9">________</button>
+                            <img class = 'image' src="unset.png" id = "9,9p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "9,10">________</button>
+                            <img class = 'image' src="unset.png" id = "9,10p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "9,11">________</button>
+                            <img class = 'image' src="unset.png" id = "9,11p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "9,12">________</button>
+                            <img class = 'image' src="unset.png" id = "9,12p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "9,13">________</button>
+                            <img class = 'image' src="unset.png" id = "9,13p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "9,14">________</button>
+                            <img class = 'image' src="unset.png" id = "9,14p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "9,15">________</button>
+                            <img class = 'image' src="unset.png" id = "9,15p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "10,0">________</button>
+                            <img class = 'image' src="unset.png" id = "10,0p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "10,1">________</button>
+                            <img class = 'image' src="unset.png" id = "10,1p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "10,2">________</button>
+                            <img class = 'image' src="unset.png" id = "10,2p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "10,3">________</button>
+                            <img class = 'image' src="unset.png" id = "10,3p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "10,4">________</button>
+                            <img class = 'image' src="unset.png" id = "10,4p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "10,5">________</button>
+                            <img class = 'image' src="unset.png" id = "10,5p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "10,6">________</button>
+                            <img class = 'image' src="unset.png" id = "10,6p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "10,7">________</button>
+                            <img class = 'image' src="unset.png" id = "10,7p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "10,8">________</button>
+                            <img class = 'image' src="unset.png" id = "10,8p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "10,9">________</button>
+                            <img class = 'image' src="unset.png" id = "10,9p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "10,10">________</button>
+                            <img class = 'image' src="unset.png" id = "10,10p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "10,11">________</button>
+                            <img class = 'image' src="unset.png" id = "10,11p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "10,12">________</button>
+                            <img class = 'image' src="unset.png" id = "10,12p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "10,13">________</button>
+                            <img class = 'image' src="unset.png" id = "10,13p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "10,14">________</button>
+                            <img class = 'image' src="unset.png" id = "10,14p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "10,15">________</button>
+                            <img class = 'image' src="unset.png" id = "10,15p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "11,0">________</button>
+                            <img class = 'image' src="unset.png" id = "11,0p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "11,1">________</button>
+                            <img class = 'image' src="unset.png" id = "11,1p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "11,2">________</button>
+                            <img class = 'image' src="unset.png" id = "11,2p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "11,3">________</button>
+                            <img class = 'image' src="unset.png" id = "11,3p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "11,4">________</button>
+                            <img class = 'image' src="unset.png" id = "11,4p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "11,5">________</button>
+                            <img class = 'image' src="unset.png" id = "11,5p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "11,6">________</button>
+                            <img class = 'image' src="unset.png" id = "11,6p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "11,7">________</button>
+                            <img class = 'image' src="unset.png" id = "11,7p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "11,8">________</button>
+                            <img class = 'image' src="unset.png" id = "11,8p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "11,9">________</button>
+                            <img class = 'image' src="unset.png" id = "11,9p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "11,10">________</button>
+                            <img class = 'image' src="unset.png" id = "11,10p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "11,11">________</button>
+                            <img class = 'image' src="unset.png" id = "11,11p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "11,12">________</button>
+                            <img class = 'image' src="unset.png" id = "11,12p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "11,13">________</button>
+                            <img class = 'image' src="unset.png" id = "11,13p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "11,14">________</button>
+                            <img class = 'image' src="unset.png" id = "11,14p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "11,15">________</button>
+                            <img class = 'image' src="unset.png" id = "11,15p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "12,0">________</button>
+                            <img class = 'image' src="unset.png" id = "12,0p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "12,1">________</button>
+                            <img class = 'image' src="unset.png" id = "12,1p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "12,2">________</button>
+                            <img class = 'image' src="unset.png" id = "12,2p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "12,3">________</button>
+                            <img class = 'image' src="unset.png" id = "12,3p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "12,4">________</button>
+                            <img class = 'image' src="unset.png" id = "12,4p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "12,5">________</button>
+                            <img class = 'image' src="unset.png" id = "12,5p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "12,6">________</button>
+                            <img class = 'image' src="unset.png" id = "12,6p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "12,7">________</button>
+                            <img class = 'image' src="unset.png" id = "12,7p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "12,8">________</button>
+                            <img class = 'image' src="unset.png" id = "12,8p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "12,9">________</button>
+                            <img class = 'image' src="unset.png" id = "12,9p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "12,10">________</button>
+                            <img class = 'image' src="unset.png" id = "12,10p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "12,11">________</button>
+                            <img class = 'image' src="unset.png" id = "12,11p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "12,12">________</button>
+                            <img class = 'image' src="unset.png" id = "12,12p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "12,13">________</button>
+                            <img class = 'image' src="unset.png" id = "12,13p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "12,14">________</button>
+                            <img class = 'image' src="unset.png" id = "12,14p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "12,15">________</button>
+                            <img class = 'image' src="unset.png" id = "12,15p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "13,0">________</button>
+                            <img class = 'image' src="unset.png" id = "13,0p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "13,1">________</button>
+                            <img class = 'image' src="unset.png" id = "13,1p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "13,2">________</button>
+                            <img class = 'image' src="unset.png" id = "13,2p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "13,3">________</button>
+                            <img class = 'image' src="unset.png" id = "13,3p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "13,4">________</button>
+                            <img class = 'image' src="unset.png" id = "13,4p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "13,5">________</button>
+                            <img class = 'image' src="unset.png" id = "13,5p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "13,6">________</button>
+                            <img class = 'image' src="unset.png" id = "13,6p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "13,7">________</button>
+                            <img class = 'image' src="unset.png" id = "13,7p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "13,8">________</button>
+                            <img class = 'image' src="unset.png" id = "13,8p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "13,9">________</button>
+                            <img class = 'image' src="unset.png" id = "13,9p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "13,10">________</button>
+                            <img class = 'image' src="unset.png" id = "13,10p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "13,11">________</button>
+                            <img class = 'image' src="unset.png" id = "13,11p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "13,12">________</button>
+                            <img class = 'image' src="unset.png" id = "13,12p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "13,13">________</button>
+                            <img class = 'image' src="unset.png" id = "13,13p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "13,14">________</button>
+                            <img class = 'image' src="unset.png" id = "13,14p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "13,15">________</button>
+                            <img class = 'image' src="unset.png" id = "13,15p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "14,0">________</button>
+                            <img class = 'image' src="unset.png" id = "14,0p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "14,1">________</button>
+                            <img class = 'image' src="unset.png" id = "14,1p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "14,2">________</button>
+                            <img class = 'image' src="unset.png" id = "14,2p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "14,3">________</button>
+                            <img class = 'image' src="unset.png" id = "14,3p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "14,4">________</button>
+                            <img class = 'image' src="unset.png" id = "14,4p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "14,5">________</button>
+                            <img class = 'image' src="unset.png" id = "14,5p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "14,6">________</button>
+                            <img class = 'image' src="unset.png" id = "14,6p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "14,7">________</button>
+                            <img class = 'image' src="unset.png" id = "14,7p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "14,8">________</button>
+                            <img class = 'image' src="unset.png" id = "14,8p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "14,9">________</button>
+                            <img class = 'image' src="unset.png" id = "14,9p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "14,10">________</button>
+                            <img class = 'image' src="unset.png" id = "14,10p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "14,11">________</button>
+                            <img class = 'image' src="unset.png" id = "14,11p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "14,12">________</button>
+                            <img class = 'image' src="unset.png" id = "14,12p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "14,13">________</button>
+                            <img class = 'image' src="unset.png" id = "14,13p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "14,14">________</button>
+                            <img class = 'image' src="unset.png" id = "14,14p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "14,15">________</button>
+                            <img class = 'image' src="unset.png" id = "14,15p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "15,0">________</button>
+                            <img class = 'image' src="unset.png" id = "15,0p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "15,1">________</button>
+                            <img class = 'image' src="unset.png" id = "15,1p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "15,2">________</button>
+                            <img class = 'image' src="unset.png" id = "15,2p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "15,3">________</button>
+                            <img class = 'image' src="unset.png" id = "15,3p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "15,4">________</button>
+                            <img class = 'image' src="unset.png" id = "15,4p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "15,5">________</button>
+                            <img class = 'image' src="unset.png" id = "15,5p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "15,6">________</button>
+                            <img class = 'image' src="unset.png" id = "15,6p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "15,7">________</button>
+                            <img class = 'image' src="unset.png" id = "15,7p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "15,8">________</button>
+                            <img class = 'image' src="unset.png" id = "15,8p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "15,9">________</button>
+                            <img class = 'image' src="unset.png" id = "15,9p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "15,10">________</button>
+                            <img class = 'image' src="unset.png" id = "15,10p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "15,11">________</button>
+                            <img class = 'image' src="unset.png" id = "15,11p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "15,12">________</button>
+                            <img class = 'image' src="unset.png" id = "15,12p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "15,13">________</button>
+                            <img class = 'image' src="unset.png" id = "15,13p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "15,14">________</button>
+                            <img class = 'image' src="unset.png" id = "15,14p">
+                        </div>
+                    </div>
+                    <div class='square-grid__cell square-grid__cell--16'>
+                        <div class='square-grid__content'>
+                            <button class="button" onclick="updateKanjiGrid(this)" id = "15,15">________</button>
+                            <img class = 'image' src="unset.png" id = "15,15p">
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td width="50%">
+                <table>
+                    <tr>
+                        <td>
+                            Name of Current Kanji
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <textarea id = "kanjiNameArea" style="width: 235px; height: 50px"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Array Representation
+                        </td>
+                        <td>
+                            Search Results <button onclick="doKanjiComparison(currentKanji)">Search</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <textarea id = "kanjiArrayArea" style="width: 235px; height: 255px"></textarea>
+                        </td>
+                        <td>
+                            <textarea id = "searchResultsArea" style="width: 235px; height: 255px;"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button onclick="updateKanjiCode()">Update Kanji</button>
+                        </td>
+                        <td>
+                            Dictionary File:
+                            <input type="file" id = "fileinput" style="position: absolute"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Code Representation
+                        </td>
+                        <td>
+                            Dictionary Values
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <textarea id = "kanjiCodeArea" style="width: 235px; height: 145px"></textarea>
+                        </td>
+                        <td>
+                            <textarea id = "kanjiDictionaryArea" style="width: 235px; height: 145px";></textarea>
+                        </td>
+                    <tr>
+                        <td>
+                            Trace?
+                            <input type="file" id = "imageFileInput" style="position: absolute"/>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+    </table>
+</table>
+
+<script type="text/javascript">
+    var n = 16;
+    var kanjiArray = initializeSquareArray(n);
+    var kanjiCode = new Array(n*n);
+    var currentKanji = new Kanji();
+    var kanjiDictionary = [];
+    var kanjiSearchResults = [];
+
+    var kanjiArrayTextBox = document.getElementById("kanjiArrayArea");
+    var kanjiCodeTextBox = document.getElementById("kanjiCodeArea");
+    var kanjiNameTextBox = document.getElementById("kanjiNameArea");
+    var searchResultsTextBox = document.getElementById("searchResultsArea");
+    var kanjiDictionaryTextBox = document.getElementById("kanjiDictionaryArea");
+    var kanjiTraceImage = document.getElementById("traceImage");
+    document.getElementById('fileinput').addEventListener('change', readDictionaryFile, false);
+    document.getElementById('imageFileInput').addEventListener('change', findImageFile, false);
+    kanjiArrayTextBox.textContent = "";
+    kanjiCodeTextBox.textContent = "";
+    kanjiNameTextBox.textContent = "";
+    searchResultsTextBox.textContent = "";
+    kanjiDictionaryTextBox.textContent = "";
+
+    function updateKanjiGrid(button) {
+        var buttonID = button.id;
+        var kanjiArrayIndex = buttonID.split(",");
+        var iIndex = kanjiArrayIndex[0];
+        var jIndex = kanjiArrayIndex[1];
+        var buttonBackgroundID = buttonID + "p";
+        var buttonBackground = document.getElementById(buttonBackgroundID);
+
+        if (kanjiArray[iIndex][jIndex] == 0){
+            buttonBackground.src = "set.png";
+            updateKanjiArray(iIndex,jIndex, 1);
+        }
+        else{
+            buttonBackground.src = "unset.png";
+            updateKanjiArray(iIndex, jIndex, 0);
+        }
+    }
+
+    function updateKanjiCode() {
+        kanjiCode = squareArrayToLinear(kanjiArray);
+        updateKanji();
+    }
+
+    function updateKanjiArray(iIndex, jIndex, set){
+        kanjiArray[iIndex][jIndex] = set;
+        kanjiArrayTextBox.textContent = "";
+        kanjiArrayTextBox.textContent = printSquareArray(kanjiArray);
+    }
+
+    function updateKanji() {
+        currentKanji.code = kanjiCode;
+        currentKanji.name = kanjiNameTextBox.value;
+        kanjiCodeTextBox.textContent = "";
+        kanjiCodeTextBox.textContent = printLinearArray(currentKanji.code) + " " + currentKanji.name;
+    }
+
+    function updateSearchResults(searchResults) {
+        searchResultsTextBox.textContent = "";
+        searchResultsTextBox.textContent = printLinearArray(searchResults, "tuple");
+    }
+
+    function generateKanjiDictionary(fileContents) {
+        var dictionary = [];
+        var dictionaryValuesSplit = fileContents.split(",");
+        var dictionarySplitLen = dictionaryValuesSplit.length;
+        for (var i = 0; i < (dictionarySplitLen); i = i + 2){
+            var tempName = dictionaryValuesSplit[i];
+            var tempCode = (dictionaryValuesSplit[i+1]).split('');
+            var tempKanji = new Kanji(tempCode, tempName);
+            dictionary.push(tempKanji);
+        }
+        kanjiDictionary = dictionary;
+        kanjiDictionaryTextBox.textContent = printLinearArray(kanjiDictionary, "kanji");
+        return kanjiDictionary;
+    }
+
+    function printSquareArray(arrayToPrint){
+        var arrayLen = arrayToPrint.length;
+        var string = "";
+        for (var i = 0; i < arrayLen; i++){
+            for (var j = 0; j < arrayLen; j++){
+                string = string + arrayToPrint[i][j] + " ";
+            }
+            string = string + "\n";
+        }
+        return string;
+    }
+
+    function printLinearArray(arrayToPrint, type){
+        var arrayLength = arrayToPrint.length;
+        var string = "";
+        for (var i = 0; i < arrayLength; i++){
+            if (type == "kanji"){
+                string = string + arrayToPrint[i].name + "\n" + printLinearArray(arrayToPrint[i].code) + "\n";
+            }
+            else if (type == "tuple"){
+                string = string + arrayToPrint[i].kanji.name + "\n" + arrayToPrint[i].comparison + "\n";
+            }
+            else{
+                string = string + arrayToPrint[i];
+            }
+        }
+        return string;
+    }
+
+    function initializeSquareArray(size){
+        var x = new Array(size);
+        for (var i = 0; i < size; i++)
+        {
+            x[i] = new Array(size);
+        }
+
+        for (var i = 0; i < size; i++){
+            for (var j = 0; j < size; j++){
+                x[i][j] = 0;
+            }
+        }
+        return x;
+    }
+
+    function squareArrayToLinear(sqArray){
+        var x = [];
+        var xIndex = 0;
+        for (var i = 0; i < n; i++){
+            for (var j = 0; j < n; j++){
+                x[xIndex] = sqArray[i][j];
+                xIndex = xIndex + 1;
+            }
+        }
+        return x;
+    }
+
+    function doKanjiComparison(){
+        if (kanjiDictionary.length == 0){
+            return [];
+        }
+        var kanjiCount = kanjiDictionary.length;
+        var kanjiCodeToCompare = currentKanji.code;
+        var resultsList = [];
+
+        for (var i = 0; i < kanjiCount; i++){
+            var tempComparison = compareCodes(kanjiDictionary[i].code, kanjiCodeToCompare);
+            var tempTuple = new Tuple(kanjiDictionary[i], tempComparison);
+            if (tempTuple.comparison < 20){
+                resultsList.push(tempTuple);
+            }
+        }
+
+        kanjiSearchResults = resultsList;
+        updateSearchResults(kanjiSearchResults);
+        return kanjiSearchResults;
+    }
+
+    function compareCodes(arrayS, arrayT) {
+        var sSize = arrayS.length;
+        var warp = initializeSquareArray(sSize);
+
+        for (var p = 0; p < sSize; p++){
+            warp[p][0] = 10000000000;
+        }
+        for (var q = 0; q < sSize; q++){
+            warp[0][q] = 1000000000 ;
+        }
+
+        warp[0][0] = 0;
+
+        for (var i = 1; i < sSize; i++){
+            for (var j = 1; j < sSize; j++){
+                var cost = distance(arrayS[i], arrayT[j]);
+                var val1 = warp[i-1][j];
+                var val2 = warp[i][j-1];
+                var val3 = warp[i-1][j-1];
+                var min = minimum(val1, val2, val3);
+                warp[i][j] = cost + min;
+            }
+        }
+
+        return warp[sSize-1][sSize-1];
+    }
+    
+    function distance(x, y){
+        if (x > y){
+            return x - y;
+        }
+        else {
+            var ans = x - y;
+            return (-1) * ans;
+        }
+    }
+
+    function minimum(x,y,z) {
+        if ((x == y) && (y == z)){
+            return x;
+        }
+        else if ((x <= y) && (x <= z)){
+            return x;
+        }
+        else if ((y <= x) && (y <= z)){
+            return y;
+        }
+        return z;
+    }
+
+    function Kanji(code, name) {
+        this.code = code;
+        this.name = name;
+    }
+
+    function Tuple(kanji, comparison){
+        this.kanji = kanji;
+        this.comparison = comparison;
+    }
+
+    function readDictionaryFile(evt) {
+        var f = evt.target.files[0];
+        if (f){
+            var r = new FileReader();
+            r.onload = function (e) {
+                var contents = e.target.result;
+                generateKanjiDictionary(contents);
+            };
+        }
+        r.readAsText(f);
+    }
+
+    function findImageFile(evt){
+        var f = evt.target.files[0];
+        if (f){
+            var r = new FileReader();
+            r.onload = function (e) {
+                kanjiTraceImage.src = e.target.result;
+            }
+        }
+        r.readAsDataURL(f);
+    }
+</script>
+</body>
+</html>
